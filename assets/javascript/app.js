@@ -19,6 +19,16 @@ var Q2 = {
 	"option4": "Eastern Michigan",
 };
 
+var Q3 = {
+	"Question": "Who played in the famous Kick-Six Game?",
+	"option1": "Alabama-LSU",
+	"option2": "Alabama-Florida",
+	"option3": "Alabama-Auburn",
+	"option4": "Alabama-Georgia",
+}
+
+
+
 // Pseudocode
 // Link HTML to app.js
 // Create timeouts to automate next question
@@ -49,32 +59,32 @@ console.log(timeRemainingContainer);
 // Create Clock
 var timeLeft = 10;
 var elem = document.getElementById('timeRemaining');
-
 var timerId = setInterval(countdown, 1000);
 
 // Reset Clock
 var resetTimer = function() {
-	var timeLeft = 10;
-var elem = document.getElementById('timeRemaining');
-var timerId = setInterval(countdown, 1000);
+timeLeft = 10;
+elem = document.getElementById('timeRemaining');
+timerId = setInterval(countdown, 1000);
 }
+
+// Run Timer
+
 
 
 function countdown() {
   if (timeLeft == 0) {
-    clearTimeout(timerId);
+  	clearInterval(timerId);
     secondQuestion();
     resetTimer();
+    console.log(resetTimer);
+    timeLeft--;
 
-
-  } else {
+} 
+  else {
     elem.innerHTML = timeLeft + ' seconds remaining';
     timeLeft--;
-  }}
+  }};
+
 
 // When time is up, call next question (array)
-
-
-
-
-
