@@ -9,7 +9,6 @@ var Q1 = {
 	"option4": "Southeast Missouri State",
 };
 
-//Send Q1 to HTML
 
 
 var Q2 = {
@@ -28,8 +27,18 @@ var Q2 = {
 var questionsContainer = $('#questionsCol')[0];
 console.log(questionsContainer);
 
-// Puts text on the dom
-questionsContainer.innerHTML = "Whatever you want"
+// Send Q1 to HTML
+var firstQuestion = function() {
+questionsContainer.innerHTML = "<p>"+Q1.Question+"<br><br>"+Q1.option1+"<br><br>"+Q1.option2+"<br><br>"+Q1.option3+"<br><br>"+Q1.option4+"</p>"
+};
+
+// Send Q2 to HTML after time is done
+var secondQuestion = function() {
+questionsContainer.innerHTML = "<p>"+Q2.Question+"<br><br>"+Q2.option1+"<br><br>"+Q2.option2+"<br><br>"+Q2.option3+"<br><br>"+Q2.option4+"</p>"
+};
+
+firstQuestion();
+
 
 var timeRemainingContainer = $('#timeRemaining')[0];
 console.log(timeRemainingContainer);
@@ -38,15 +47,26 @@ console.log(timeRemainingContainer);
 //$(timeRemainingContainer).text("Stuff") 
 
 // Create Clock
-var timeLeft = 30;
+var timeLeft = 10;
 var elem = document.getElementById('timeRemaining');
 
 var timerId = setInterval(countdown, 1000);
 
+// Reset Clock
+var resetTimer = function() {
+	var timeLeft = 10;
+var elem = document.getElementById('timeRemaining');
+var timerId = setInterval(countdown, 1000);
+}
+
+
 function countdown() {
   if (timeLeft == 0) {
     clearTimeout(timerId);
-    nextQuestion();
+    secondQuestion();
+    resetTimer();
+
+
   } else {
     elem.innerHTML = timeLeft + ' seconds remaining';
     timeLeft--;
