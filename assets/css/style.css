@@ -1,3 +1,22 @@
 .col-sm-12 {
 text-align: center;
 }
+
+h1 {
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.struct {
+color: white;
+}
+
+h2 {
+color: white;
+}
+
+h5 {
+color: white;
+font-size: 30px;
+}

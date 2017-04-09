@@ -58,7 +58,7 @@ var questionSetter = function(q_num) {
 	if(nextQuestion.length <= q_num){
 		return false;
 	}
-questionsContainer.innerHTML = "<p>"+nextQuestion[q_num].Question+"<br><br>"+nextQuestion[q_num].option1+"<br><br>"+nextQuestion[q_num].option2+"<br><br>"+nextQuestion[q_num].option3+"<br><br>"+nextQuestion[q_num].option4+"</p>";
+questionsContainer.innerHTML = "<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><br>"+ "<button>" +nextQuestion[q_num].option1+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option2+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option3+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option4+"</button>"+"</p>";
 	return true;
 };
 console.log(questionSetter);
