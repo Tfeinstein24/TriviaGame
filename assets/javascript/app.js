@@ -1,5 +1,4 @@
 // Create questions with arrays
-var questionsArray = [Q1, Q2]
 
 var Q1 = {
 	"Question": "Which FCS team upset Michigan in the Big House in 2007?",
@@ -8,7 +7,6 @@ var Q1 = {
 	"option3": "Appalachian State",
 	"option4": "Southeast Missouri State",
 };
-
 
 
 var Q2 = {
@@ -25,8 +23,25 @@ var Q3 = {
 	"option2": "Alabama-Florida",
 	"option3": "Alabama-Auburn",
 	"option4": "Alabama-Georgia",
-}
+};
 
+var Q4 = {
+	"Question": "What is the home of the Air Raid offense?",
+	"option1": "Texas Tech",
+	"option2": "California",
+	"option3": "Washington State",
+	"option4": "Oregon",
+};
+
+var Q5 = {
+	"Question": "Which school touches a rock before they run on the field?",
+	"option1": "LSU",
+	"option2": "Clemson",
+	"option3": "South Carolina",
+	"option4": "Georgia",
+};
+
+var nextQuestion = [Q1, Q2, Q3, Q4, Q5];
 
 
 // Pseudocode
@@ -38,17 +53,20 @@ var questionsContainer = $('#questionsCol')[0];
 console.log(questionsContainer);
 
 // Send Q1 to HTML
-var firstQuestion = function() {
-questionsContainer.innerHTML = "<p>"+Q1.Question+"<br><br>"+Q1.option1+"<br><br>"+Q1.option2+"<br><br>"+Q1.option3+"<br><br>"+Q1.option4+"</p>"
+//function parameters
+var questionSetter = function(q_num) {
+	if(nextQuestion.length <= q_num){
+		return false;
+	}
+questionsContainer.innerHTML = "<p>"+nextQuestion[q_num].Question+"<br><br>"+nextQuestion[q_num].option1+"<br><br>"+nextQuestion[q_num].option2+"<br><br>"+nextQuestion[q_num].option3+"<br><br>"+nextQuestion[q_num].option4+"</p>";
+	return true;
 };
+console.log(questionSetter);
 
 // Send Q2 to HTML after time is done
 var secondQuestion = function() {
 questionsContainer.innerHTML = "<p>"+Q2.Question+"<br><br>"+Q2.option1+"<br><br>"+Q2.option2+"<br><br>"+Q2.option3+"<br><br>"+Q2.option4+"</p>"
 };
-
-firstQuestion();
-
 
 var timeRemainingContainer = $('#timeRemaining')[0];
 console.log(timeRemainingContainer);
@@ -57,29 +75,29 @@ console.log(timeRemainingContainer);
 //$(timeRemainingContainer).text("Stuff") 
 
 // Create Clock
-var timeLeft = 10;
+var timeLeft = 0;
 var elem = document.getElementById('timeRemaining');
 var timerId = setInterval(countdown, 1000);
+var iter = 0;
 
 // Reset Clock
 var resetTimer = function() {
-timeLeft = 10;
-elem = document.getElementById('timeRemaining');
-timerId = setInterval(countdown, 1000);
+	timeLeft = 5;
+	elem = document.getElementById('timeRemaining');
+	timerId = setInterval(countdown, 1000);
 }
 
 // Run Timer
 
-
-
 function countdown() {
   if (timeLeft == 0) {
   	clearInterval(timerId);
-    secondQuestion();
-    resetTimer();
+  	if(questionSetter(iter)){
+  		resetTimer();
+  	}
+    
     console.log(resetTimer);
-    timeLeft--;
-
+    iter++;
 } 
   else {
     elem.innerHTML = timeLeft + ' seconds remaining';
