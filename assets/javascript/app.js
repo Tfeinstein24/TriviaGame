@@ -65,7 +65,7 @@ console.log(questionSetter);
 
 // Create On Click Events
 var userGuess = document.getElementsByTagName("BUTTON");
-userGuess.addEventListener("click", myScript);
+userGuess;
 console.log(userGuess);
 
 // Time Container
