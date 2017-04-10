@@ -63,11 +63,11 @@ questionsContainer.innerHTML = "<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"
 };
 console.log(questionSetter);
 
-// Send Q2 to HTML after time is done
-var secondQuestion = function() {
-questionsContainer.innerHTML = "<p>"+Q2.Question+"<br><br>"+Q2.option1+"<br><br>"+Q2.option2+"<br><br>"+Q2.option3+"<br><br>"+Q2.option4+"</p>"
-};
+// Create On Click Events
+var userGuess = document.getElementsByTagName("<button>");
+console.log(userGuess);
 
+// Time Container
 var timeRemainingContainer = $('#timeRemaining')[0];
 console.log(timeRemainingContainer);
 
