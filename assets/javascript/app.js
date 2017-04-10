@@ -64,7 +64,8 @@ questionsContainer.innerHTML = "<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"
 console.log(questionSetter);
 
 // Create On Click Events
-var userGuess = document.getElementsByTagName("<button>");
+var userGuess = document.getElementsByTagName("BUTTON");
+userGuess;
 console.log(userGuess);
 
 // Time Container
@@ -103,6 +104,8 @@ function countdown() {
     elem.innerHTML = timeLeft + ' seconds remaining';
     timeLeft--;
   }};
+
+
 
 
 // When time is up, call next question (array)
