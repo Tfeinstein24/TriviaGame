@@ -52,34 +52,34 @@ var wrong = 0;
 // Create timeouts to automate next question
 // create if statements that generate different pages based on if the answer is right or wrong
 
-var questionsContainer = $('#questionsCol')[0];
-console.log(questionsContainer);
+var questionsContainer = $('#questionsCol');
 
 // Send Q1 to HTML
 //function parameters
 var questionSetter = function(q_num) {
-	if(nextQuestion.length <= q_num){
-		return false;
+	// if(nextQuestion.length <= q_num){
+	// 	return false;
+	// }
+questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><br>"+ "<button class='btn'>" +nextQuestion[q_num].option1+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option2+"</button>"+"<br><br>"+"<button class='btn'>"+nextQuestion[q_num].option3+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option4+"</button>"+"</p>")
+	$(".btn").on("click", function(event){
+	console.log(event.target.innerText);
+	if (event.target.innerText === Q1.option3) {
+		correct++;
+		console.log(correct);
+		alert("Correct!");
 	}
-questionsContainer.innerHTML = "<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><br>"+ "<button>" +nextQuestion[q_num].option1+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option2+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option3+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option4+"</button>"+"</p>";
+	else {
+		wrong++;
+		console.log(wrong);
+		alert("Wrong!");
+		}
+	})
 	return true;
 };
-console.log(questionSetter);
 
-// Create On Click Events
-var userGuess = $("#questionsCol").on("click", "button", function(){
-console.log(userGuess);
-if (userGuess === Q1.option3) {
-	correct++;
-	console.log(correct);
-	alert("Correct!");
-}
-else {
-	wrong++;
-	console.log(wrong);
-	alert("Wrong!");
-	  }
-})
+
+
+
 
 // Time Container
 var timeRemainingContainer = $('#timeRemaining')[0];
