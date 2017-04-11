@@ -43,6 +43,9 @@ var Q5 = {
 
 var nextQuestion = [Q1, Q2, Q3, Q4, Q5];
 
+// Create wins and losses
+var correct = 0;
+var wrong = 0;
 
 // Pseudocode
 // Link HTML to app.js
@@ -64,9 +67,19 @@ questionsContainer.innerHTML = "<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"
 console.log(questionSetter);
 
 // Create On Click Events
-var userGuess = document.getElementsByTagName("BUTTON");
-userGuess.onclick = function() { alert('clicked')};
+var userGuess = $("#questionsCol").on("click", "button", function(){
 console.log(userGuess);
+if (userGuess === Q1.option3) {
+	correct++;
+	console.log(correct);
+	alert("Correct!");
+}
+else {
+	wrong++;
+	console.log(wrong);
+	alert("Wrong!");
+	  }
+})
 
 // Time Container
 var timeRemainingContainer = $('#timeRemaining')[0];
@@ -83,7 +96,7 @@ var iter = 0;
 
 // Reset Clock
 var resetTimer = function() {
-	timeLeft = 5;
+	timeLeft = 10;
 	elem = document.getElementById('timeRemaining');
 	timerId = setInterval(countdown, 1000);
 }
