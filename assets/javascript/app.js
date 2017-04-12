@@ -178,6 +178,8 @@ questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><
 		correct++;
 		alert("Correct!");
 		timeLeft = 1;
+		$("#wins").innerHTML(correct);
+		$("#losses").innerHTML(wrong);
 	}
 
 	else if (event.target.innerText === Q5.option1) {
@@ -224,7 +226,7 @@ var iter = 0;
 
 // Reset Clock
 var resetTimer = function() {
-	timeLeft = 10;
+	timeLeft = 20;
 	elem = document.getElementById('timeRemaining');
 	timerId = setInterval(countdown, 1000);
 }
