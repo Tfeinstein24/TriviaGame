@@ -68,6 +68,12 @@ questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><
 		console.log(correct);
 		alert("Correct!");
 	}
+
+	if (event.target.innerText === Q2.option4) {
+		correct++;
+		console.log(correct);
+		alert("Correct!");
+	}
 	else {
 		wrong++;
 		console.log(wrong);
