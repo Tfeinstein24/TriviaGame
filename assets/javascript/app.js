@@ -67,119 +67,138 @@ questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><
 		correct++;
 		console.log(correct);
 		alert("Correct!");
+		timeLeft = 1;
 	}
 
 	else if (event.target.innerText === Q1.option1) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q1.option2) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q1.option4) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 	if (event.target.innerText === Q2.option4) {
 		correct++;
 		console.log(correct);
 		alert("Correct!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q2.option1) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q2.option2) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q2.option3) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 	if (event.target.innerText === Q3.option3) {
 		correct++;
 		alert("Correct!");
+		timeLeft = 1;
 	}
 
 	else if (event.target.innerText === Q3.option1) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q3.option2) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q3.option4) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
-
 
 
 	if (event.target.innerText === Q4.option1) {
 		correct++;
 		alert("Correct!");
+		timeLeft = 1;
 	}
 
 	else if (event.target.innerText === Q4.option2) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q4.option3) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q4.option4) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 	if (event.target.innerText === Q5.option2) {
 		correct++;
 		alert("Correct!");
+		timeLeft = 1;
 	}
 
 	else if (event.target.innerText === Q5.option1) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q5.option3) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 		else if (event.target.innerText === Q5.option4) {
 		wrong++;
 		console.log(wrong);
 		alert("Wrong!");
+		timeLeft = 1;
 		}
 
 	})
