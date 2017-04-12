@@ -60,7 +60,7 @@ var questionSetter = function(q_num) {
 	// if(nextQuestion.length <= q_num){
 	// 	return false;
 	// }
-questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><br>"+ "<button class='btn'>" +nextQuestion[q_num].option1+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option2+"</button>"+"<br><br>"+"<button class='btn'>"+nextQuestion[q_num].option3+"</button>"+"<br><br>"+"<button>"+nextQuestion[q_num].option4+"</button>"+"</p>")
+questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><br>"+ "<button class='btn'>" +nextQuestion[q_num].option1+"</button>"+"<br><br>"+"<button class='btn'>"+nextQuestion[q_num].option2+"</button>"+"<br><br>"+"<button class='btn'>"+nextQuestion[q_num].option3+"</button>"+"<br><br>"+"<button class='btn'>"+nextQuestion[q_num].option4+"</button>"+"</p>")
 	$(".btn").on("click", function(event){
 	console.log(event.target.innerText);
 	if (event.target.innerText === Q1.option3) {
@@ -74,6 +74,22 @@ questionsContainer.html("<p>"+"<h5>"+nextQuestion[q_num].Question+"</h5>"+"<br><
 		console.log(correct);
 		alert("Correct!");
 	}
+	if (event.target.innerText === Q3.option3) {
+		correct++;
+		alert("Correct!");
+	}
+
+	if (event.target.innerText === Q4.option1) {
+		correct++;
+		alert("Correct!");
+	}
+
+	if (event.target.innerText === Q5.option2) {
+		correct++;
+		alert("Correct!");
+	}
+
+	
 	else {
 		wrong++;
 		console.log(wrong);
